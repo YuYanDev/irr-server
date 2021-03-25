@@ -1,6 +1,7 @@
 const cidrRegex = require("cidr-regex");
 
 const keyLength = 15;
+
 const isArray = (unknow) =>
   Object.prototype.toString.call(unknow) === "[object Array]";
 
