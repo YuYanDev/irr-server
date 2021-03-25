@@ -1,8 +1,9 @@
-const whois = require("./src/whois");
-const ftp = require("./src/ftp");
-const writeDB = require("./src/file");
+const whoisServer = require("./src/whois");
+const ftpServer = require("./src/ftp");
+const fileService = require("./src/file");
+const httpServer = require("./src/http");
 
-whois.listen(43);
-ftp.listen();
-
-writeDB();
+whoisServer.listen(43);
+ftpServer.listen();
+httpServer.listen(8080)
+fileService.exportFileJob();

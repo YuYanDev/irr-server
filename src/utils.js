@@ -58,6 +58,7 @@ const getMAINT = (str = "") => {
     return str.match(/^MAINT-[0-9a-zA-Z-]{1,}/)[0];
   }
 };
+
 const format = (obj) => {
   let str = "";
   Object.keys(obj).forEach((key) => {
@@ -75,6 +76,24 @@ const format = (obj) => {
   return str;
 };
 
+const getTimeStamp = () => {
+  const date = new Date();
+
+  let nowMonth = date.getMonth() + 1;
+
+  let strDate = date.getDate();
+
+  if (nowMonth >= 1 && nowMonth <= 9) {
+    nowMonth = "0" + nowMonth;
+  }
+
+  if (strDate >= 0 && strDate <= 9) {
+    strDate = "0" + strDate;
+  }
+
+  return String(date.getFullYear() + nowMonth + strDate);
+};
+
 module.exports = {
   isRoute,
   isRoute6,
@@ -87,4 +106,5 @@ module.exports = {
   getASSET,
   isMAINT,
   getMAINT,
+  getTimeStamp,
 };

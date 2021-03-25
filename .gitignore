@@ -109,3 +109,5 @@ dist
 *.db.gz
 
 db.json
+
+.DS_Store
